@@ -1,0 +1,29 @@
+@theme: one-dark;
+
+@header-bg-color: #252526;
+@header-color: #fff;
+@header-box-shodow: inset 0 6px 6px -6px #000;
+
+@tab-bg-color: #2d2d2d;
+@content-bg-color: #282c34;
+
+
+.code-editor {
+
+    &-@{theme} &-header {
+        background-color: @header-bg-color;
+        color: @header-color;
+        box-shadow: @header-box-shodow;
+    }
+
+    &-@{theme} &-content {
+        background-color: @content-bg-color;
+        color: @content-bg-color;
+    }
+
+    &-@{theme} &-tab {
+        background-color: @tab-bg-color;
+        border-left-color: @header-bg-color;
+    }
+
+}

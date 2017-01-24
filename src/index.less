@@ -1,0 +1,116 @@
+@font-size: 13px;
+
+@header-height: 36px;
+
+@tab-padding-left: 16px;
+@tab-padding-right: 16px;
+
+@action-min-width: 28px;
+@action-font-size: 16px;
+@action-margin-right: 6px;
+
+@status-bar-padding: 0 10px;
+@status-bar-bg-color: #007acc;
+@status-item-hover-bg-color: hsla(0,0%,100%,.12);
+@status-bar-color: #fff;
+@status-height: 22px;
+
+.cf () {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.code-editor {
+
+    &-bone {
+        font-family: "Monaco", "Consolas", "Source Code Pro";
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-fullscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+    }
+
+    &-body {
+        font-size: @font-size;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-header {
+        height: @header-height;
+        line-height: @header-height;
+        display: flex;
+    }
+
+    &-tabs {
+        flex: 1;
+        display: flex;
+    }
+
+    &-tab {
+        box-sizing: border-box;
+        cursor: pointer;
+        border: 1px solid transparent;
+        padding-left: @tab-padding-left;
+        padding-right: @tab-padding-right;
+        opacity: .5;
+        transition: opacity .3s ease-in-out;
+
+        &:hover,
+        &-active {
+            opacity: 1;
+        }
+    }
+
+    &-action {
+        min-width: @action-min-width;
+        font-size: @action-font-size;
+        margin-right: @action-margin-right;
+        cursor: pointer;
+        opacity: .8;
+        transition: opacity .3s ease-in-out;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &-content {
+        flex: 1;
+    }
+
+    &-status-bar {
+        background-color: @status-bar-bg-color;
+        color: @status-bar-color;
+        padding: @status-bar-padding;
+        line-height: @status-height;
+        height: @status-height;
+    }
+
+    &-status-item {
+        transition: background-color .3s ease-in-out;
+
+        &:hover {
+            background-color: @status-item-hover-bg-color;
+        }
+    }
+
+    &-status-right {
+        .cf();
+    }
+
+    &-status-right &-status-item {
+        float: right;
+    }
+}

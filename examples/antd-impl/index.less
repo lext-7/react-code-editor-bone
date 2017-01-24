@@ -1,0 +1,23 @@
+@import '../../src/index.less';
+
+.code-editor-antd {
+    &-type-select {
+        .ant-select {
+            width: 120px;
+        }
+
+        .ant-select-selection {
+            line-height: @status-height;
+            height: @status-height;
+            color: @status-bar-color;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+
+        .ant-select-selection__rendered {
+            line-height: @status-height;
+        }
+    }
+}
